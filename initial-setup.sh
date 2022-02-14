@@ -7,4 +7,4 @@ fi
 
 docker-compose -f docker-compose.yml up -d
 
-export CHEF_LICENSE=accept
+source $CODESPACE_VSCODE_FOLDER/env_vars
