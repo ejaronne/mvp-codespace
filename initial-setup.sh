@@ -1,8 +1,11 @@
 #! /bin/bash
+if ! command -v inspec &> /dev/null
+then
+  echo "Installing InSpec into the Environment"
+  curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec
+  exit
+fi
 
-curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec
+docker-compose -f docker-compose.yml up -d
 
-docker run -it --rm -d --name my-ubi8 redhat/ubi8
-
-docker run -it --rm -d --name my-nginx  nginx
-
+export CHEF_LICENSE=accept
