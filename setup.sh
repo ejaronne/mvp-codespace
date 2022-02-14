@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# TODO - Setup a shared data space for the student to put JSON files
+
 echo "Setting up your InSpec Developers Environment"
 
 echo "Checking if InSpec is Installed"
@@ -14,7 +16,7 @@ fi
 echo "Settup up your testing targets"
 docker-compose -f ./bootstrap/docker-compose.yml up -d
 
-echo "Getting your Enviroment Variables Setup..."
-.  ./bootstrp/env-vars;
+# TODO - fix setting the CHEF_LICENSE accept in the env
+# TODO - this will go away if we use cinc-auditor
 
 echo "Happy InSpec'ing... :)"
